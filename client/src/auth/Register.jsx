@@ -58,65 +58,76 @@ const Register = () => {
     });
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  try {
-    const res = await axios.post("http://localhost:3000/auth/register", {
-      username: values.username,
-      email: values.email,
-      password: values.password,
-    });
+    try {
+      const res = await axios.post("http://localhost:3000/auth/register", {
+        username: values.username,
+        email: values.email,
+        password: values.password,
+      });
 
-    if (res.status === 201) {
-      toast.success("Registration successful! 🎉", toastOptions);
-      navigate("/login");
-    }
-  } catch (error) {
-    if (error.response) {
-      if (error.response.status === 409) {
-        // User already exists
-        toast.error("Account already exists. Please login.", toastOptions);
-      } else if (error.response.status === 400) {
-        // Validation or bad input
-        toast.error(error.response.data.message || "Invalid details provided.", toastOptions);
-      } else {
-        // Any other server error
-        toast.error("Something went wrong. Please try again.", toastOptions);
+      if (res.status === 201) {
+        toast.success("Registration successful! 🎉", toastOptions);
+        navigate("/login");
       }
-    } else {
-      toast.error("Network error. Please check your connection.", toastOptions);
+    } catch (error) {
+      if (error.response) {
+        if (error.response.status === 409) {
+          // User already exists
+          toast.error("Account already exists. Please login.", toastOptions);
+        } else if (error.response.status === 400) {
+          // Validation or bad input
+          toast.error(
+            error.response.data.message || "Invalid details provided.",
+            toastOptions
+          );
+        } else {
+          // Any other server error
+          toast.error("Something went wrong. Please try again.", toastOptions);
+        }
+      } else {
+        toast.error(
+          "Network error. Please check your connection.",
+          toastOptions
+        );
+      }
     }
-  }
-};
-
+  };
 
   return (
     <div className="flex min-h-full">
       {/* Image Section */}
       <div className="relative hidden w-0 flex-1 lg:block">
+        <img
+          alt="Static fallback"
+          src="/register.jpg"
+          className={`absolute inset-0 h-screen w-full object-cover transition-opacity duration-1000 ease-in-out ${
+            images.length > 0 ? "opacity-0" : "opacity-100"
+          }`}
+        />
+
         {images.length > 0 && (
           <img
             alt="Random from Unsplash"
             src={images[currentImageIndex]}
-            className="absolute inset-0 h-screen w-full object-cover transition-opacity duration-1000 ease-in-out"
+            className="absolute inset-0 h-screen w-full object-cover transition-opacity duration-1000 ease-in-out opacity-100"
           />
         )}
       </div>
 
-      {/* Form Section */}
       <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-        <div className="mx-auto w-full max-w-sm lg:w-96">
+        <div className="mx-auto w-full max-w-sm px-4 sm:w-96 lg:w-96">
           <div className="flex flex-col justify-center items-center">
             <img alt="Induction program" src={Logo} className="h-40 w-auto " />
           </div>
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            {/* Email */}
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-gray-900"
               >
                 Email address
               </label>
@@ -135,7 +146,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="username"
-                className="block text-sm font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-gray-900"
               >
                 Username
               </label>
@@ -154,7 +165,7 @@ const Register = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-gray-900"
               >
                 Password
               </label>
@@ -173,7 +184,7 @@ const Register = () => {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-[#f0ce35] px-3 py-1.5 text-sm font-semibold text-white shadow hover:bg-[#d4b12e] focus-visible:outline-2 focus-visible:outline-[#d4b12e] cursor-pointer"
+                className="flex w-full justify-center rounded-md bg-[#f0ce35] px-3 py-1.5 text-sm font-semibold  shadow hover:bg-[#d4b12e] focus-visible:outline-2 focus-visible:outline-[#d4b12e] cursor-pointer"
               >
                 Register
               </button>
@@ -181,7 +192,7 @@ const Register = () => {
                 Already have an account?
                 <Link
                   to="/login"
-                  className="font-semibold text-[#d4b12e] hover:text-[#d4b12e]"
+                  className="font-semibold text-[#f0ce35] hover:text-[#d4b12e]"
                 >
                   {" "}
                   Login &rarr;

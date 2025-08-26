@@ -46,7 +46,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-full m-2">
+    <div className="flex justify-center items-center min-h-screen px-4">
       <div className="flex flex-1 flex-col justify-center px-4 py-2 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
         <div className="mx-auto w-full max-w-sm lg:w-96">
           <div className="flex flex-col justify-center items-center">
@@ -149,14 +149,14 @@ const Login = () => {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-[#f0ce35] px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-[#d4b12e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
+                    className="flex w-full justify-center rounded-md bg-[#f0ce35] px-3 py-1.5 text-sm/6 font-semibold shadow-xs hover:bg-[#d4b12e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
                     onSubmit={handleSubmit}
                   >
                     Login
                   </button>
                   <p className="mt-2 text-center text-sm/6 text-gray-500">
                     Don't have an account?
-                    <Link className="text-[#d4b12e]" to="/register" aria-hidden="true">
+                    <Link className="font-semibold text-[#f0ce35] hover:text-[#d4b12e]" to="/register" aria-hidden="true">
                       {" "}
                       Register &rarr;
                     </Link>
