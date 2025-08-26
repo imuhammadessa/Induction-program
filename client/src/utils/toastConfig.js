@@ -1,6 +1,6 @@
 // src/utils/toastConfig.js
 export const toastOptions = {
-  position: "bottom-left",
+  position: "top-right",
   autoClose: 3000,
   hideProgressBar: false,
   closeOnClick: true,

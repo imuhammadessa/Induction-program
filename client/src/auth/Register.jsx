@@ -27,7 +27,7 @@ const Register = () => {
           },
           headers: {
             Authorization:
-              "Client-ID your_unsplash_api_key_here",
+              "Client-ID vRcBXPjzzZMFvMzXWMCRRTP2nNR2N4F_a7BEB69NxdE",
           },
         });
         setImages(res.data.results.map((img) => img.urls.full));
@@ -126,7 +126,7 @@ const Register = () => {
                 type="email"
                 required
                 autoComplete="email"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm"
+                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-[#d4b12e] sm:text-sm"
                 onChange={handleChange}
               />
             </div>
@@ -145,7 +145,7 @@ const Register = () => {
                 type="text"
                 required
                 autoComplete="username"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm"
+                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-[#d4b12e] sm:text-sm"
                 onChange={handleChange}
               />
             </div>
@@ -164,7 +164,7 @@ const Register = () => {
                 type="password"
                 required
                 autoComplete="current-password"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-sm"
+                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-[#d4b12e] sm:text-sm"
                 onChange={handleChange}
               />
             </div>
@@ -173,7 +173,7 @@ const Register = () => {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white shadow hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-indigo-600 cursor-pointer"
+                className="flex w-full justify-center rounded-md bg-[#f0ce35] px-3 py-1.5 text-sm font-semibold text-white shadow hover:bg-[#d4b12e] focus-visible:outline-2 focus-visible:outline-[#d4b12e] cursor-pointer"
               >
                 Register
               </button>
@@ -181,7 +181,7 @@ const Register = () => {
                 Already have an account?
                 <Link
                   to="/login"
-                  className="font-semibold text-indigo-600 hover:text-indigo-500"
+                  className="font-semibold text-[#d4b12e] hover:text-[#d4b12e]"
                 >
                   {" "}
                   Login &rarr;

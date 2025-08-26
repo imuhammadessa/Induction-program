@@ -70,7 +70,7 @@ const Login = () => {
                       type="email"
                       required
                       autoComplete="email"
-                      className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                      className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#d4b12e] sm:text-sm/6"
                       onChange={handleChange}
                     />
                   </div>
@@ -90,7 +90,7 @@ const Login = () => {
                       type="password"
                       required
                       autoComplete="current-password"
-                      className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                      className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#d4b12e] sm:text-sm/6"
                       onChange={handleChange}
                     />
                   </div>
@@ -104,7 +104,7 @@ const Login = () => {
                           id="remember-me"
                           name="remember-me"
                           type="checkbox"
-                          className="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
+                          className="col-start-1 row-start-1 appearance-none rounded-sm border border-gray-300 bg-white checked:border-[#496a89] checked:bg-[#496a89] indeterminate:border-[#496a89] indeterminate:bg-[#496a89] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#496a89] disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
                         />
                         <svg
                           fill="none"
@@ -139,7 +139,7 @@ const Login = () => {
                   <div className="text-sm/6">
                     <a
                       href="#"
-                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                      className="font-semibold text-[#496a89] hover:text-[#496a89]"
                     >
                       Forgot password?
                     </a>
@@ -149,14 +149,14 @@ const Login = () => {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
+                    className="flex w-full justify-center rounded-md bg-[#f0ce35] px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-[#d4b12e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer"
                     onSubmit={handleSubmit}
                   >
                     Login
                   </button>
                   <p className="mt-2 text-center text-sm/6 text-gray-500">
                     Don't have an account?
-                    <Link to="/register" aria-hidden="true">
+                    <Link className="text-[#d4b12e]" to="/register" aria-hidden="true">
                       {" "}
                       Register &rarr;
                     </Link>
