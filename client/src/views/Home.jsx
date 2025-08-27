@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useIdleLogout from "../hooks/useIdleLogout.js";
+import Layout from "../layout/Layout";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  useIdleLogout(300);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -42,9 +45,10 @@ const Home = () => {
   }
 
   return (
-    <div>
-      <div className="p-6">Welcome to Home Page 🎉</div>
-    </div>
+    <Layout>
+      <h1 className="text-2xl font-bold">Welcome to the Home Page</h1>
+      <p className="mt-2 text-gray-700">This is the dashboard area.</p>
+    </Layout>
   );
 };
 
